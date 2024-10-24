@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  frontend_wre:
+    tty: true
+    build:
+      context: .
+    ports:
+      - 20000:3000
+    #command: yarn dev
+    #container_name: wre2024_nextjs_dev
+    container_name: knack2024_nextjs_dev
+    volumes:
+      - ./:/app
+    networks:
+      - appbit-wre2024-network
+networks:
+  appbit-wre2024-network:
+    driver: bridge
